@@ -1,0 +1,23 @@
+@mixin social-icon-hover($color)
+	background: #{$color} none repeat scroll 0 0
+	border: 1px solid #{$color}
+	color: #ffffff
+@mixin bg($color:#fff)
+	background: #{$color} none repeat scroll 0 0
+@mixin responsive ($dev)
+	@if $dev == mobile
+		@media (max-width: 576px)
+			@content
+	@else if $dev == mobilePlus
+		@media (min-width: 312px) and (max-width: 767px)
+			@content
+	@else if $dev == pad
+		@media (min-width: 576px)
+			@content
+	@else if $dev == padPlus
+		@media (max-width: 767px)
+			@content
+	@else if $dev == pc
+		@media (min-width: 768px)
+			@content
+
